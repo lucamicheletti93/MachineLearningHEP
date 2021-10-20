@@ -33,10 +33,10 @@ ml_study: # mlout, mlplot
   docrossvalidation: false
   dolearningcurve: true
   doroc: true
-  doroctraintest: false
-  doplotdistr: false
+  doroctraintest: true
+  doplotdistr: true
   doimportance: true
-  doimportanceshap: false
+  doimportanceshap: true
   dogridsearch: false
   dobayesianopt: false
   doboundary: false
