@@ -1,27 +1,16 @@
-#!/bin/bash
+rm -rf  /data/X3872ALICE3/newvariables/mc/pkldata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/data/pkldata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/mc/pklskdata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/mc/evttotdata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/data/pklskdata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/data/evttotdata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/mc/pklskmldata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/data/pklskmldata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/mc/mltotdata_scenario3
+rm -rf  /data/X3872ALICE3/newvariables/data/mltotdata_scenario3
+rm -rf  mlout/ 
+rm -rf  mlplot/
 
-reset
-
-Tag="scenario3"
-Remove="No"
-if [[ -z $Remove ]]; then
-    rm -rf /data/Run5data_mlhep/prod_test/pklmc_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/pkldata_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/pklskmc_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/evttotmc_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/pklskdata_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/evttotdata_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/pklskmlmc_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/pklskmldata_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/mltotmc_$Tag
-    rm -rf /data/Run5data_mlhep/prod_test/mltotdata_$Tag
-fi
-
-rm -rf  resultsdata_scenario3
-rm -rf  resultsdatatot_scenario3
-
-rm -rf  resultsmc_scenario3
-rm -rf  resultsmctot_scenario3
+DISPLAY="" python do_entire_analysis.py -r default_complete.yml -d data/data_run5/database_ml_parameters_Xanalysis_scenario3.yml -a scenario3
 
 
-DISPLAY="" python do_entire_analysis.py -r submission/default_complete.yml -d data/data_run5/database_ml_parameters_Dzero_$Tag.yml -a $Tag |& tee run5.log
