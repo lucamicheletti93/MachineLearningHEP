@@ -174,8 +174,8 @@ X3872:
     triggersel:
       data: null
       mc: null
-    nbkg: 1000000
-    nsig: 1000000
+    nbkg: 1000
+    nsig: 1000
     equalize_sig_bkg: True
     sampletagforsignal: 1
     sampletagforbkg: 0
